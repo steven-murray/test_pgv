@@ -8,7 +8,7 @@ from os.path import dirname, join
 from setuptools import find_packages, setup
 
 import pygitversion
-pygitversion.write_git_info_file("test_pgv")
+pygitversion.write_git_info_file(join(dirname(__file__), 'test_pgv'))
 
 def read(*names, **kwargs):
     with io.open(

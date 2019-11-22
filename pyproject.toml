@@ -1,2 +1,2 @@
 [build-system]
-requires=['pygitversion','setuptools>=40.8.0', 'wheel']
+requires=['pygitversion>=0.1.2','setuptools>=40.8.0', 'wheel']
