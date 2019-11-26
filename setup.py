@@ -7,9 +7,20 @@ def myversion():
     from setuptools_scm.version import guess_next_dev_version
 
     def branch_scheme(version):
-        return guess_next_dev_version(version) if version.exact else guess_next_dev_version(version)+"b{}".format(version.branch)
-
-    return {'local_scheme': branch_scheme, "version_scheme": branch_scheme}
+        if version.exact or version.node is None:
+            return version.format_choice(
+                "", "+d{time:{time_format}}", time_format="%Y%m%d"
+            )
+        else:
+            if version.branch == "master":
+                return version.format_choice(
+                    "+{node}", "+{node}.d{time:{time_format}}", time_format="%Y%m%d"
+                )
+            else:
+                return version.format_choice(
+                    "+{node}[{branch}]", "+{node}[{branch}].d{time:{time_format}}", time_format="%Y%m%d"
+                )
+    return {'local_scheme': branch_scheme}
 
 setup(
     name="test_pgv",
