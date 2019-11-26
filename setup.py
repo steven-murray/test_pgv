@@ -15,7 +15,6 @@ setup(
     name="test_pgv",
     packages=find_packages(),
     python_requires=">=3.5",
-    install_requires=['pygitversion'],
     use_scm_version=myversion,
     setup_requires=['setuptools_scm']
 )
