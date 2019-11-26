@@ -1,2 +1,2 @@
-test_pgv/*.py
-test_pgv/GIT_INFO
+graft test_pgv
+include test_pgv/GIT_INFO

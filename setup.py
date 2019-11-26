@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 from __future__ import absolute_import, print_function
+from setuptools.command.install import install
 
 import io
 from os.path import dirname, join
-
 from setuptools import find_packages, setup
 
 import pygitversion
-pygitversion.write_git_info_file(join(dirname(__file__), 'test_pgv'))
+pygitversion.write_git_info_file(__file__, 'test_pgv')
+
 
 def read(*names, **kwargs):
     with io.open(
