@@ -22,6 +22,7 @@ def myversion():
                 )
     return {'local_scheme': branch_scheme}
 
+# Add some rubbish...
 
 setup(
     name="test_pgv",
