@@ -14,13 +14,14 @@ def myversion():
         else:
             if version.branch == "master":
                 return version.format_choice(
-                    "+{node}", "+{node}.d{time:{time_format}}", time_format="%Y%m%d"
+                    "+{node}", "+{node}.dirty",
                 )
             else:
                 return version.format_choice(
-                    "+{node}[{branch}]", "+{node}[{branch}].d{time:{time_format}}", time_format="%Y%m%d"
+                    "+{node}.{branch}", "+{node}.{branch}.dirty"
                 )
     return {'local_scheme': branch_scheme}
+
 
 setup(
     name="test_pgv",

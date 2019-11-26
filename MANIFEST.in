@@ -1,2 +1,0 @@
-graft test_pgv
-include test_pgv/GIT_INFO
